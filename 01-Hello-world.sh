@@ -1,3 +1,5 @@
 #!/bin/bash
-echo "Hello world"
-echo "I am new to git"
+
+echo "Hello world!"
+echo "this is kind of confusing"
+echo "what to do"
