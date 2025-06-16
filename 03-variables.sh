@@ -3,7 +3,7 @@
 person1="Alia"
 person2="Deepika"
 
-echo "$person1:: Hey, Hiii Elon"
+echo "$person1:: Hey, Hiii $person2"
 echo "$person2:: Hey $person1...Hii"
 echo "$person1:: How are you $person2??"
 echo  "$person2:: Not bad..How are you $person1?"
