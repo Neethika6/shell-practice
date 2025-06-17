@@ -1,6 +1,7 @@
 #!/bin/bash
 
-# Installation can be done witht the root
+#In this we are going to install MYSQL
+# Installation can be done with the root
 # id -u this value will be 0 fro root user
 
 id_value=$(id -u)
@@ -10,3 +11,9 @@ then
 else
     echo "ERROR:Please switch to ROOT"
 fi
+
+#check if the package is already installed or not
+dnf list installed mysql
+
+
+
