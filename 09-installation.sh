@@ -10,6 +10,7 @@ then
     echo "You are in ROOT..You can proceed with installation"
 else
     echo "ERROR:Please switch to ROOT"
+    exit 1
 fi
 
 #check if the package is already installed or not
