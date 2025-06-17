@@ -14,7 +14,21 @@ else
 fi
 
 #check if the package is already installed or not
-dnf list installed mysql
+# dnf list installed mysql
 
+# if [ ]
+# then
+# else
+# fi
+
+#Steps to install the package
+dnf install mysqlkjkjfa
+if [ $? -eq 0 ]
+then 
+    echo "MySQL installation is success"
+else
+    echo "MySQL installation failed"
+    exit 1
+fi
 
 
