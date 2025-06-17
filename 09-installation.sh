@@ -19,18 +19,19 @@ dnf list installed mysql
 if [ $? -ne 0 ]
 then
     echo "SUCCESS: Procced with installation"
+    #Steps to install the package
+    dnf install mysql
+    if [ $? -eq 0 ]
+    then 
+        echo "SUCCESS:MySQL installation is done"
+    else
+        echo "ERROR:MySQL installation failed"
+        exit 1
+    fi
 else
     echo "Package is already installed"
 fi
 
-#Steps to install the package
-dnf install mysqlkjkjfa
-if [ $? -eq 0 ]
-then 
-    echo "SUCCESS:MySQL installation is done"
-else
-    echo "ERROR:MySQL installation failed"
-    exit 1
-fi
+
 
 
