@@ -19,12 +19,12 @@ fi
 PACKAGE_INSTALLATION()
 {
     #Steps to install the package
-    dnf install mysql -y
-    if [ $? -eq 0 ]
+   
+    if [ $1 -eq 0 ]
     then 
-        echo "SUCCESS:mysql installation is done"
+        echo "SUCCESS:$2 installation is done"
     else
-        echo "ERROR:mysql installation failed"
+        echo "ERROR:$2 installation failed"
         exit 1
     fi
 }
@@ -35,9 +35,34 @@ dnf list installed mysql
 if [ $? -ne 0 ]
 then
     echo "SUCCESS: Procced with installation"
-    PACKAGE_INSTALLATION(mysql)
+    dnf install mysql -y
+    PACKAGE_INSTALLATION $? "MySQL"
     
 else
     echo "Package is already installed"
 fi
 
+#Install NGINX
+
+dnf list installed nginx
+
+if [ $? -ne 0 ]
+then
+    echo "SUCCESS: Proceed with installation"
+    dnf install nginx -y
+    PACKAGE_INSTALLATION $? "nginx"
+else
+    echo "Package is already installed"
+fi
+
+#INSTALL PYTHON3
+
+dnf list istalled python3
+if [ $? -ne 0 ]
+then
+    echo "SUCCESS: Proceed with installation"
+    dnf install python3 -y
+    PACKAGE_INSTALLATION $? "python3"
+else
+    echo "Package is already insatlled
+fi
