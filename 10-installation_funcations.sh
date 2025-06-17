@@ -64,5 +64,5 @@ then
     dnf install python3 -y
     PACKAGE_INSTALLATION $? "python3"
 else
-    echo "Package is already insatlled
+    echo "Package is already insatlled"
 fi
