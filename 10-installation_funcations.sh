@@ -19,18 +19,18 @@ fi
 PACKAGE_INSTALLATION()
 {
     #Steps to install the package
-    dnf install $1 -y
+    dnf install mysql -y
     if [ $? -eq 0 ]
     then 
-        echo "SUCCESS:$1 installation is done"
+        echo "SUCCESS:mysql installation is done"
     else
-        echo "ERROR:$1 installation failed"
+        echo "ERROR:mysql installation failed"
         exit 1
     fi
 }
 
 #check if the package is already installed or not
-dnf list installed $1
+dnf list installed mysql
 
 if [ $? -ne 0 ]
 then
