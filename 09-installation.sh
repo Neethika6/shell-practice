@@ -7,27 +7,29 @@
 id_value=$(id -u)
 if [ $id_value -eq 0 ]
 then
-    echo "You are in ROOT..You can proceed with installation"
+    echo "SUCCESS:You are in ROOT..You can proceed with installation"
 else
     echo "ERROR:Please switch to ROOT"
     exit 1
 fi
 
 #check if the package is already installed or not
-# dnf list installed mysql
+dnf list installed mysql
 
-# if [ ]
-# then
-# else
-# fi
+if [ $? -ne 0 ]
+then
+    echo "SUCCESS: Procced with installation"
+else
+    echo "Package is already installed"
+fi
 
 #Steps to install the package
 dnf install mysqlkjkjfa
 if [ $? -eq 0 ]
 then 
-    echo "MySQL installation is success"
+    echo "SUCCESS:MySQL installation is done"
 else
-    echo "MySQL installation failed"
+    echo "ERROR:MySQL installation failed"
     exit 1
 fi
 
