@@ -9,3 +9,6 @@ echo "Home directory of the user running the script:$HOME"
 echo "PID of the current running script:$$"
 sleep 10 &
 echo "PID of the last command running in the background:$!"
+
+name=$1
+echo $name
