@@ -20,7 +20,7 @@ if [ $? -ne 0 ]
 then
     echo "SUCCESS: Procced with installation"
     #Steps to install the package
-    dnf install mysql
+    dnf install mysql -y
     if [ $? -eq 0 ]
     then 
         echo "SUCCESS:MySQL installation is done"
