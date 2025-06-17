@@ -8,5 +8,5 @@ if [ $id_value -eq 0 ]
 then
     echo "You are in ROOT..You can proceed with installation"
 else
-    echo "Please switch to ROOT"
+    echo "ERROR:Please switch to ROOT"
 fi
