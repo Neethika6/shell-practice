@@ -10,3 +10,4 @@ then
 else
     echo "ERROR:: You are running the script as NON-ROOT.Please Switch to ROOT"
 fi
+dnf list module nginx
