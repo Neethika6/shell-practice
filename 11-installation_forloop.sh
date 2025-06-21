@@ -12,4 +12,4 @@ else
     exit 1
 fi
 
-dnf module installed nginx
+dnf list installed nginx
