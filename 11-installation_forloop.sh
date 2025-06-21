@@ -27,7 +27,7 @@ INSTALLATION_VALIDATION()
         echo -e "$G SUCCESS:$2 Instllation is success"
     else
         echo -e "$R ERROR::$2 Installation Failed"
-        exit 1
+        
     fi 
 }
 
