@@ -2,34 +2,49 @@
 set -x
 #Check if you are running the script as a ROOT User or not
 
+PACKAGE_ARRAY=("mysql" "nginx" "httpd" "python3")
+#Below are the format for color codes 31->RED, 32->Green, 33->Yellow
+#echo -e (-e enabled color)
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
 user_id=$(id -u)
 
 if [ $user_id -eq 0 ]
 then
-    echo "You are running the script as ROOT"
+    echo -e "$G SUCCESS:You are running the script as ROOT"
 else
-    echo "ERROR:: You are running the script as NON-ROOT.Please Switch to ROOT"
+    echo -e "$R ERROR:: You are running the script as NON-ROOT.Please Switch to ROOT"
     exit 1
 fi
+
+#FUNCTION TO VALIDATE INSTLLATION
 
 INSTALLATION_VALIDATION()
 {
     if [ $1 -eq 0 ]
     then
-        echo "$2 Instllation is success"
+        echo -e "$G SUCCESS:$2 Instllation is success"
     else
-        echo "$2 Installation Failed"
+        echo -e "$R ERROR::$2 Installation Failed"
         exit 1
     fi 
 }
 
-dnf list installed nginx
+#FOR LOOP
 
-if [ $? -ne 0 ]
-then
-    echo "Proceed with nginx installation"
-    dnf install nginfasx
-    INSTALLATION_VALIDATION $? "nginx"
-else
-    echo "NGINX is already installed"
-fi
+for package in {PACKAGE_ARRAY[@]}
+do
+dnf list installed $package #Check of the nginx is already installed or not
+    if [ $? -ne 0 ] #$? values returns 0 if the statement which was last executed is success if not it will return 1 to 127
+    then
+        echo -e "$Y Proceed with $package installation"
+        dnf install $package
+        INSTALLATION_VALIDATION $? "$package"
+    else
+        echo -e "$Y $package is already installed"
+    fi
+done
+
+
+
