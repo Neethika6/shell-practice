@@ -9,5 +9,7 @@ then
     echo "You are running the script as ROOT"
 else
     echo "ERROR:: You are running the script as NON-ROOT.Please Switch to ROOT"
+    exit 1
 fi
-dnf list module nginx
+
+dnf module installed nginx
