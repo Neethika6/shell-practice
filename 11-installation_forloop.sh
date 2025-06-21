@@ -1,5 +1,5 @@
 #!/bin/bash
-
+set -x
 #Check if you are running the script as a ROOT User or not
 
 user_id=$(id -u)
