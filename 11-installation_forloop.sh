@@ -13,3 +13,18 @@ else
 fi
 
 dnf list installed nginx
+
+if [ $? -ne 0 ]
+then
+    echo "Proceed with nhinx installation"
+    dnf install nginfasx
+    if [ $? -eq 0 ]
+    then
+        echo "Instllation is success"
+    else
+        echo "Installation Failed"
+        exit 1
+    fi 
+else
+    echo "NGINX is already installed"
+fi
