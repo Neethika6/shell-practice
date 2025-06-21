@@ -27,7 +27,6 @@ INSTALLATION_VALIDATION()
         echo -e "$G SUCCESS:$2 Instllation is success"
     else
         echo -e "$R ERROR::$2 Installation Failed"
-        
     fi 
 }
 
@@ -35,7 +34,7 @@ INSTALLATION_VALIDATION()
 
 for package in ${PACKAGE_ARRAY[@]}
 do
-dnf list installed $package #Check of the nginx is already installed or not
+dnf list installed $package -y #Check of the nginx is already installed or not
     if [ $? -ne 0 ] #$? values returns 0 if the statement which was last executed is success if not it will return 1 to 127
     then
         echo -e "$Y Proceed with $package installation"
