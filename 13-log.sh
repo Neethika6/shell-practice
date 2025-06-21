@@ -12,7 +12,7 @@ log_path=/var/log/shellscript_logs
 time_script=$(date)
 
 mkdir -p $log_path #if the directroy is already created it will not throw error if we use -p along with mkidr
-script_name=$($0 | cut -d "." -f1)
+script_name=$(echo $0 | cut -d "." -f1)
 log_file="$log_path/$script_name.log"
 
 #tee command will show the log on screen and will save the log in the file as well
