@@ -31,7 +31,7 @@ INSTALLATION_VALIDATION()
 
 #FOR LOOP
 
-for package in $1
+for package in $@ #It will take the values from all the arguments that has been passed
 do
 dnf list installed $package #Check of the nginx is already installed or not
     if [ $? -ne 0 ] #$? values returns 0 if the statement which was last executed is success if not it will return 1 to 127
