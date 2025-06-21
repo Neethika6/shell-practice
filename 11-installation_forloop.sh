@@ -12,19 +12,24 @@ else
     exit 1
 fi
 
+INSTALLATION_VALIDATION()
+{
+    if [ $1 -eq 0 ]
+    then
+        echo "$2 Instllation is success"
+    else
+        echo "$2 Installation Failed"
+        exit 1
+    fi 
+}
+
 dnf list installed nginx
 
 if [ $? -ne 0 ]
 then
-    echo "Proceed with nhinx installation"
+    echo "Proceed with nginx installation"
     dnf install nginfasx
-    if [ $? -eq 0 ]
-    then
-        echo "Instllation is success"
-    else
-        echo "Installation Failed"
-        exit 1
-    fi 
+    INSTALLATION_VALIDATION $? "nginx"
 else
     echo "NGINX is already installed"
 fi
