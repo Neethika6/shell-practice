@@ -2,7 +2,7 @@
 
 #Check if you are running the script as a ROOT User or not
 
-PACKAGE_ARRAY=("mysql" "nginx" "httpd" "python3")
+#PACKAGE_ARRAY=("mysql" "nginx" "httpd" "python3")
 #Below are the format for color codes 31->RED, 32->Green, 33->Yellow
 #echo -e (-e enabled color)
 R="\e[31m"
