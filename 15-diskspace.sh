@@ -1,5 +1,5 @@
 #!/bin/bash
-tomail="neethikadakoju346@gmail.com"
+set -x
 threshold=1
 disk_usage=$(df -h | awk 'NR>1 {print $5}' | cut -d "%" -f1)
 while read i
