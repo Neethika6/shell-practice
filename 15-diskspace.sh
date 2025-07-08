@@ -3,6 +3,7 @@ threshold=10
 while read i
 do
     disk_usage=$(df -h | grep $i | awk '{print $5}'| cut -d "%" -f1 | awk NR==1)
+    echo $disk_usage
     if [ $disk_usage >= $threshold ]  
     then
         echo "$i is $disk_usage"
